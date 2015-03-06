@@ -4,7 +4,7 @@
 #  ------------------------------------------------------------
 #*/
 
-baseurl: http://tap2tel.com/win-tech
+baseurl: http://example.com/
 is_dev: false
 destination: _production
 minify_html: true
