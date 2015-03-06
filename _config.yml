@@ -1,0 +1,31 @@
+#/**
+#*
+#* development config
+#  ------------------------------------------------------------
+#*/
+
+# main site varibales
+encoding: utf-8
+baseurl: 'http://127.0.0.1/sites/categories/dev'
+
+# site meta data
+name: 'sitename.de'
+meta:
+ title: 'Site Title'
+ description: 'Site description text comes here.'
+ image: 'http://127.0.0.1/sites/categories/dev/assets/images/site.jpg'
+
+# status for development
+is_dev: true
+
+# site generation settings
+encoding: utf-8
+source: _jekyll
+destination: dev
+minify_html: false
+permalink: /:title/
+pagination: false
+exclude: ['assets/less', 'assets/scripts/main.js', 'assets/scripts/modules', 'assets/scripts/vendor']
+kramdown:
+ auto_ids: false
+ parse_block_html: true

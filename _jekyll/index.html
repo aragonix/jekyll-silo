@@ -1,0 +1,12 @@
+---
+layout: homepage
+---
+
+index.html:<br>
+silo leaders:<br>
+
+{% for p in site.pages %}
+	{% if p.layout == 'silo-leader' %}
+		<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+	{% endif %}
+{% endfor %}

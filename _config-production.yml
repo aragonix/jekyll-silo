@@ -1,0 +1,10 @@
+#/**
+#*
+#* production config
+#  ------------------------------------------------------------
+#*/
+
+baseurl: http://tap2tel.com/win-tech
+is_dev: false
+destination: _production
+minify_html: true

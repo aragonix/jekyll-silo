@@ -1,0 +1,117 @@
+/**
+*
+* custom LESS & CSS helpers
+  ------------------------------------------------------------
+*/
+
+	/**
+	* clearfix
+	*/
+
+	._clearfix {
+
+		&:after {
+			content:"";
+			display:table;
+			clear:both;
+		}
+	}
+
+
+	/**
+	* fix flickering animation
+	*/
+
+	._fixAnimation() {
+		.backface-visibility(hidden);
+		.perspective(1000);
+		.transform-style(preserve-3d);
+		.translateZ(0);
+		.translateX(0);
+	}
+
+
+	/**
+	* inactive links
+	*/
+
+	._inactiveLink {
+		color: inherit !important;
+		text-decoration: none !important;
+	}
+
+
+	/**
+	* spacing function
+	*/
+
+	._space(@factor:1) {
+		@spaceXXS: (2px * @factor);
+		@spaceXS: (4px * @factor);
+		@spaceS: (8px * @factor);
+		@space: (16px * @factor);
+		@spaceL: (24px * @factor);
+		@spaceXL: (32px * @factor);
+		@spaceXXL: (40px * @factor);
+	}
+
+
+	/**
+	* full size image background function
+	*/
+
+	._fullSizeBg(@fixed: false) when (@fixed=false) {
+		background-position: center center;
+		background-repeat: no-repeat;
+		.background-size(cover);
+	}
+
+	._fullSizeBg(@fixed: false) when (@fixed=true) {
+		background-position: center center;
+		background-repeat: no-repeat;
+		.background-size(cover);
+		background-attachment:fixed;
+	}
+
+
+	/**
+	* custom webkit scrollbar
+	*/
+
+	._scrollbar(@onHover: true, @width:10px, @color:#555, @radius:0) when (@onHover=true) {
+		&::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0); }
+	}
+
+	._scrollbar(@onHover: true, @width:10px, @color:#555, @radius:0) when (@onHover=false) {
+		&::-webkit-scrollbar-thumb { background-color: @color; }
+	}
+
+	._scrollbar(@onHover: true, @width:10px, @color:#555, @radius:0) {
+		scrollbar-base-color: @color;
+		scrollbar-3dlight-color: darken(@color, 20%);
+		scrollbar-highlight-color: darken(@color, 20%);
+		scrollbar-track-color: lighten(@color, 10%);
+		scrollbar-arrow-color: darken(@color, 20%);
+		scrollbar-shadow-color: darken(@color, 20%);
+		&::-webkit-scrollbar { width: @width; height: @width; }
+		&::-webkit-scrollbar-track {  background-color: rgba(0,0,0,0);}
+		&::-webkit-scrollbar-track-piece { background-color: rgba(0,0,0,0);}
+		&::-webkit-scrollbar-thumb { height: 50px; .border-radius(@radius);}
+		&::-webkit-scrollbar-thumb:hover { background-color: @color; }
+		&::-webkit-resizer { background-color: @color;}
+	}
+
+
+	/**
+	* media queries
+	*/
+
+	@me_mobile_min: ~'only screen and (min-width: @{mobile_width})';
+	@me_mobile_max: ~'only screen and (max-width: @{mobile_width})';
+	@me_mobile_only: @me_mobile_max;
+	@me_tablet_min: ~'only screen and (min-width: @{tablet_width})';
+	@me_tablet_max: ~'only screen and (max-width: @{tablet_width})';
+	@me_tablet_only: ~'only screen and (min-width: @{tablet_width}) and (max-width: @{desktop_width})';
+	@me_desktop_min: ~'only screen and (min-width: @{desktop_width})';
+	@me_desktop_max: ~'only screen and (max-width: @{desktop_width})';
+	@me_desktop_only: @me_desktop_min;

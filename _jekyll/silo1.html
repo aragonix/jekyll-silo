@@ -1,0 +1,14 @@
+---
+layout: silo-leader
+title: silo 1
+permalink: /silo-1/
+---
+
+silo 1 index:<br>
+list posts in silo:<br>
+
+{% for p in site.posts %}
+	{% if p.parent == 'silo-1' %}
+		<a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+	{% endif %}
+{% endfor %}

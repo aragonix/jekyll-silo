@@ -1,0 +1,47 @@
+/**
+*
+* site design
+  ------------------------------------------------------------
+*/
+
+
+	/**
+	/ basic site styles
+	/ -------------------------------------------------------------------------
+	*/
+
+	html, body {
+		background: @white;
+		color: @black;
+		font-family: @sans_serif;
+		font-size: @font_size;
+		font-weight: normal;
+		line-height: normal;
+		-webkit-font-smoothing: antialiased;
+
+		strong {
+			font-weight: 600;
+		}
+
+		em {
+			font-style: italic;
+		}
+
+		img {
+			vertical-align: top;
+		}
+
+		a {
+			color: inherit;
+			outline: none;
+			text-decoration: underline;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		[class*="fa-"]:before {
+			font-family: "FontAwesome", sans-serif;
+		}
+	}
